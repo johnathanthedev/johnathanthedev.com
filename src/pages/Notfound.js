@@ -1,5 +1,5 @@
-import { Helmet } from "react-helmet";
 import React, { Suspense } from "react";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 import Spinner from "../components/Spinner";
@@ -8,10 +8,10 @@ function Notfound() {
   return (
     <Layout>
       <Helmet>
-        <title>404 - Chester React Personal Portfolio Template</title>
+        <title>404</title>
         <meta
           name="description"
-          content="Chester React Personal Portfolio Template Not Found Page"
+          content="johnathanthedev.com Not Found Page"
         />
       </Helmet>
       <Suspense fallback={<Spinner />}>
