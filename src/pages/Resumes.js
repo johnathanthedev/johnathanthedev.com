@@ -1,9 +1,7 @@
 import axios from "axios";
 import React, { Suspense, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import TrackVisibility from "react-on-screen";
 import Layout from "../components/Layout";
-import Progress from "../components/Progress";
 import Resume from "../components/Resume";
 import Sectiontitle from "../components/Sectiontitle";
 import Smalltitle from "../components/Smalltitle";
@@ -37,17 +35,31 @@ function Resumes() {
         <div className="mi-skills-area mi-section mi-padding-top">
           <div className="container">
             <Sectiontitle title="My Skills" />
-            <div className="mi-skills">
-              <div className="row mt-30-reverse">
-                {skills.map((skill) => (
-                  <TrackVisibility
-                    once
-                    className="col-lg-6 mt-30"
-                    key={skill.title}
-                  >
-                    <Progress title={skill.title} percentage={skill.value} />
-                  </TrackVisibility>
-                ))}
+            <div class="mi-skills">
+              <div class="row mt-30-reverse">
+                <div class="col-6 col-md-4"><h5>Html/Css</h5></div>
+                <div class="col-6 col-md-4"><h5>JavaScript</h5></div>
+                <div class="col-6 col-md-4"><h5>TypeScript</h5></div>
+                <div class="col-6 col-md-4"><h5>Bootstrap</h5></div>
+                <div class="col-6 col-md-4"><h5>Material UI</h5></div>
+                <div class="col-6 col-md-4"><h5>Scss</h5></div>
+                <div class="col-6 col-md-4"><h5>jQuery</h5></div>
+                <div class="col-6 col-md-4"><h5>React</h5></div>
+                <div class="col-6 col-md-4"><h5>Angular</h5></div>
+                <div class="col-6 col-md-4"><h5>Lit</h5></div>
+                <div class="col-6 col-md-4"><h5>Node</h5></div>
+                <div class="col-6 col-md-4"><h5>Express</h5></div>
+                <div class="col-6 col-md-4"><h5>Ruby</h5></div>
+                <div class="col-6 col-md-4"><h5>Ruby on Rails</h5></div>
+                <div class="col-6 col-md-4"><h5>.NET</h5></div>
+                <div class="col-6 col-md-4"><h5>Docker</h5></div>
+                <div class="col-6 col-md-4"><h5>Postgresql</h5></div>
+                <div class="col-6 col-md-4"><h5>Sqlite</h5></div>
+                <div class="col-6 col-md-4"><h5>MongoDB</h5></div>
+                <div class="col-6 col-md-4"><h5>Golang</h5></div>
+                <div class="col-6 col-md-4"><h5>Figma</h5></div>
+                <div class="col-6 col-md-4"><h5>Framer Motion</h5></div>
+                <div class="col-6 col-md-4"><h5>Stripe</h5></div>
               </div>
             </div>
           </div>
@@ -55,17 +67,10 @@ function Resumes() {
         <div className="mi-resume-area mi-section mi-padding-top mi-padding-bottom">
           <div className="container">
             <Sectiontitle title="Resume" />
-            <Smalltitle title="Working Experience" icon="briefcase" />
+            <Smalltitle title="Work Experience" icon="briefcase" />
             <div className="mi-resume-wrapper">
               {workingExperience.map((workingExp) => (
                 <Resume key={workingExp.id} resumeData={workingExp} />
-              ))}
-            </div>
-            <div className="mt-30"></div>
-            <Smalltitle title="Educational Qualifications" icon="book" />
-            <div className="mi-resume-wrapper">
-              {educationExperience.map((educatonExp) => (
-                <Resume key={educatonExp.id} resumeData={educatonExp} />
               ))}
             </div>
           </div>
