@@ -3,12 +3,10 @@ import FsLightbox from "fslightbox-react";
 import React, { Suspense, useEffect, useState } from "react";
 import * as Icon from "react-feather";
 import { Helmet } from "react-helmet";
-import Slider from "react-slick";
 import Layout from "../components/Layout";
 import Sectiontitle from "../components/Sectiontitle";
 import Service from "../components/Service";
 import Spinner from "../components/Spinner";
-import Testimonial from "../components/Testimonial";
 import { Image } from "../components/common/Image";
 
 function About() {
@@ -89,64 +87,25 @@ function About() {
               <div className="col-lg-6">
                 <div className="mi-about-content">
                   <h3>
-                    I am <span className="color-theme">{information.name}</span>
+                    <span className="color-theme">{information.aboutTitle}</span>
                   </h3>
                   <p>
-                    I am a frontend web developer. I can provide clean code and
-                    pixel perfect design. I also make website more & more
-                    interactive with web animations.
+                    I'm full-stack software engineer with 7+ years of experience, specializing in React, TypeScript, Rails, and front-end development. 
+                    I'm passionate about creating clean, user-friendly designs and solving real-world problems through technology.
+                    I've worked in different kinds of industries like finance, logistics, and social media.
+
+                    <br/>
+                    <br/>
+
+                    Recently, I've been focused on UI/UX design and developing modern web applications that enhance user experience.
+                    I'm always looking to expand my skill set, particularly in AI and automation, while bringing ideas to life.
                   </p>
-                  <ul>
-                    {!information.name ? null : (
-                      <li>
-                        <b>Full Name</b> {information.name}
-                      </li>
-                    )}
-                    {!information.age ? null : (
-                      <li>
-                        <b>Age</b> {information.age} Years
-                      </li>
-                    )}
-                    {!information.phone ? null : (
-                      <li>
-                        <b>Phone</b> {information.phone}
-                      </li>
-                    )}
-                    {!information.nationality ? null : (
-                      <li>
-                        <b>Nationality</b> {information.nationality}
-                      </li>
-                    )}
-                    {!information.language ? null : (
-                      <li>
-                        <b>Languages</b> {information.language}
-                      </li>
-                    )}
-                    {!information.email ? null : (
-                      <li>
-                        <b>Email</b> {information.email}
-                      </li>
-                    )}
-                    {!information.address ? null : (
-                      <li>
-                        <b>Address</b> {information.address}
-                      </li>
-                    )}
-                    {!information.freelanceStatus ? null : (
-                      <li>
-                        <b>Freelance</b> {information.freelanceStatus}
-                      </li>
-                    )}
-                  </ul>
-                  <a href={information.cvfile} className="mi-button">
-                    Download CV
-                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="mi-service-area mi-section mi-padding-top">
+        <div className="mi-service-area mi-section mi-padding-top mi-padding-bottom">
           <div className="container">
             <Sectiontitle title="Services" />
             <div className="mi-service-wrapper">
@@ -159,20 +118,6 @@ function About() {
                     <Service content={service} />
                   </div>
                 ))}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="mi-review-area mi-section mi-padding-top mi-padding-bottom">
-          <div className="container">
-            <Sectiontitle title="Reviews" />
-            <div className="row justify-content-center">
-              <div className="col-12">
-                <Slider className="mi-testimonial-slider" {...sliderSettings}>
-                  {reviews.map((review) => (
-                    <Testimonial key={review.id} content={review} />
-                  ))}
-                </Slider>
               </div>
             </div>
           </div>
