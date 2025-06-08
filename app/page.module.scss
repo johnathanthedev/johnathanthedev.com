@@ -1,0 +1,275 @@
+.page {
+    text-align: center;
+
+    h1 {
+        margin: 3rem 0 1.5rem;
+    }
+}
+
+.header {
+    position: relative;
+    width: 100vw;
+    height: 400px;
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.button {
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    font-weight: bold;
+    box-shadow: none;
+    min-width: 125px;
+    max-width: 150px;
+    padding: .75rem 1rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.button.fill {
+    background-color: white;
+    color: black;
+}
+
+.titleSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    position: absolute;
+    top: 40%;
+    text-align: center;
+
+    h3 {
+        font-size: 48px;
+    }
+
+    h3,
+    span {
+        color: white;
+    }
+
+    img {
+        width: 50px;
+        height: 75px;
+    }
+}
+
+.section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+
+    .left {
+        width: 50%;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        h4 {
+            font-weight: 300;
+            font-size: 24px;
+        }
+
+        h3 {
+            font-size: 48px;
+        }
+
+        p {
+            line-height: 48px;
+        }
+    }
+
+    img {
+        width: 600px;
+        height: 600px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .section {
+        flex-direction: column;
+
+        img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            padding: 0 1rem;
+        }
+
+        .left {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 300px;
+    }
+
+    .section {
+        img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            padding: 0 1rem;
+        }
+    }
+
+    .titleSection {
+        top: 50% !important;
+
+        h3 {
+            font-size: 24px !important;
+        }
+    }
+
+    .left {
+        padding: 1rem 1rem 0 !important;
+
+        h4 {
+            font-size: 1rem !important;
+        }
+
+        h3 {
+            font-size: 24px !important;
+        }
+
+        p {
+            line-height: 24px !important;
+            font-size: 14px !important;
+        }
+    }
+}
+
+.gridGallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+.imageContainer {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  cursor: pointer;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.imageContainer:hover .image {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.imageContainer:hover .overlay {
+  opacity: 1;
+}
+
+.magnifyingIcon {
+  color: white;
+  font-size: 2rem;
+}
+
+.fullscreenOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.fullscreenContent {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.fullscreenImage {
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.arrowLeft,
+.arrowRight {
+  position: absolute;
+  top: 50%;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  z-index: 2;
+  transform: translateY(-50%);
+}
+
+.arrowLeft {
+  left: 10px;
+}
+
+.arrowRight {
+  right: 10px;
+}
+
