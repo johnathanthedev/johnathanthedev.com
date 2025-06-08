@@ -1,0 +1,43 @@
+.LoadingScreen {
+  position: fixed;
+  inset: 0;
+  background: #0D0D0D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.animateFill .letter {
+  color: #4C4CFF;
+  transition: color 0.3s ease;
+  transition-delay: var(--delay);
+}
+
+.letter {
+  color: #fff;
+}
+
+/* Slide up loading screen */
+.slideUp {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+/* Page content initially hidden and off screen below */
+.pageContent {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  visibility: hidden;
+}
+
+/* Slide in page content */
+.slideIn {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
