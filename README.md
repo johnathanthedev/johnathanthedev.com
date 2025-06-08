@@ -1,12 +1,4 @@
-# johnathanthedev.com
+Tech: next.js
 
-My online portflio
+Deployment: Firebase
 
-## Requirements
-
-- pnpm
-- node.js
-
-## Installation
-
-Run `pnpm install` and then `pnpm start`.
