@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import styles from './LoadingWithContent.module.scss';
+import { LoadingWithContentProps } from './LoadingWithContent.types';
 
-export default function LoadingWithContent({ children }) {
+export default function LoadingWithContent({ children }: LoadingWithContentProps) {
     const [isLoading, setIsLoading] = useState(true);
     const [animateFill, setAnimateFill] = useState(false);
     const [slideUpLoading, setSlideUpLoading] = useState(false);
