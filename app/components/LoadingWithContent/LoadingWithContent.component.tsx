@@ -55,7 +55,7 @@ export default function LoadingWithContent({ children }) {
                             <span
                                 key={index}
                                 className={styles.letter}
-                                style={{ '--delay': `${index * 0.1}s` }}
+                                style={{ ['--delay' as any]: `${index * 0.1}s` }}
                             >
                                 {char}
                             </span>

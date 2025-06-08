@@ -53,7 +53,7 @@ export default function LoadingScreen() {
                         key={index}
                         className={styles.letter}
                         data-letter={char}
-                        style={{ '--delay': `${index * 0.1}s` }} // 0.1s delay between each letter
+                        style={{ ['--delay' as any]: `${index * 0.1}s` }}
                     >
                         {char}
                     </span>
