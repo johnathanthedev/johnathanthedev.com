@@ -1,8 +1,11 @@
 'use client';
 
+import Lottie from "lottie-react";
 import { useEffect, useState } from 'react';
+import animationData from "./loader.json";
 import styles from './LoadingWithContent.module.scss';
 import { LoadingWithContentProps } from './LoadingWithContent.types';
+
 
 export default function LoadingWithContent({ children }: LoadingWithContentProps) {
     const [isLoading, setIsLoading] = useState(true);
@@ -53,19 +56,7 @@ export default function LoadingWithContent({ children }: LoadingWithContentProps
                         </div>
 
                         <div className={styles.videoWrapper}>
-                            <video
-                                src="/loader.webm"
-                                autoPlay
-                                loop
-                                playsInline
-                                muted
-                                className={styles.loadingVideo}
-                                ref={(ref) => {
-                                    if (ref) {
-                                        ref.muted = true; // required for autoplay on iOS
-                                    }
-                                }}
-                            />
+                            <Lottie animationData={animationData} loop autoplay className={styles.loadingLottie} />
                         </div>
                     </div>
                 </div>
