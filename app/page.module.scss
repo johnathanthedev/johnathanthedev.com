@@ -104,10 +104,10 @@
         }
     }
 
-    img {
-        width: 600px;
-        height: 600px;
-    }
+    // img {
+    //     width: 600px;
+    //     height: 600px;
+    // }
 }
 
 @media (max-width: 1024px) {
@@ -128,6 +128,12 @@
 }
 
 @media (max-width: 768px) {
+    .page {
+        h1 {
+            font-size: 48px;
+        }
+    }
+
     .header {
         height: 300px;
     }
