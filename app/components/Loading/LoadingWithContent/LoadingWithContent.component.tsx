@@ -56,10 +56,15 @@ export default function LoadingWithContent({ children }: LoadingWithContentProps
                             <video
                                 src="/loader.webm"
                                 autoPlay
-                                muted
                                 loop
                                 playsInline
+                                muted
                                 className={styles.loadingVideo}
+                                ref={(ref) => {
+                                    if (ref) {
+                                        ref.muted = true; // required for autoplay on iOS
+                                    }
+                                }}
                             />
                         </div>
                     </div>
