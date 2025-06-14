@@ -41,27 +41,28 @@ export default function LoadingWithContent({ children }: LoadingWithContentProps
         }
     }, []);
 
-
-    const letters = "DREAM. BUILD. REPEAT.".split("");
-
     return (
         <>
             {isLoading && (
                 <div
-                    className={`${styles.LoadingScreen} ${animateFill ? styles.animateFill : ''
-                        } ${slideUpLoading ? styles.slideUp : ''}`}
+                    className={`${styles.LoadingScreen} ${animateFill ? styles.animateFill : ''} ${slideUpLoading ? styles.slideUp : ''}`}
                 >
-                    <h1 className={styles.fillText}>
-                        {letters.map((char, index) => (
-                            <span
-                                key={index}
-                                className={styles.letter}
-                                style={{ ['--delay' as string]: `${index * 0.1}s` }}
-                            >
-                                {char}
-                            </span>
-                        ))}
-                    </h1>
+                    <div className={styles.loadingContent}>
+                        <div className={styles.textWrapper}>
+                            <img src="/splash.svg" alt="Splash" className={styles.splashImage} />
+                        </div>
+
+                        <div className={styles.videoWrapper}>
+                            <video
+                                src="/loader.webm"
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                className={styles.loadingVideo}
+                            />
+                        </div>
+                    </div>
                 </div>
             )}
 

@@ -56,3 +56,8 @@ a {
     color: inherit;
     text-decoration: none;
 }
+
+#nprogress .bar {
+    background: transparent;
+    height: 0;
+}
