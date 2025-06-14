@@ -8,6 +8,7 @@ export default function Home() {
         <>
             <div className={styles.leftBanner}>ABOUT ME</div>
             <div className={styles.rightBanner}>DREAMS X REALITY</div>
+            <div className={styles.bottomBanner}>MAKE YOUR DREAM COME TRUE</div>
 
             <LoadingWithContent>
                 <div className={styles.page}>

@@ -1,6 +1,7 @@
 .page {
   text-align: center;
-    overflow-y: hidden;
+  overflow-y: hidden;
+  margin-bottom: 2.5rem;
 
   h1 {
     margin: 3rem 0 1.5rem;
@@ -231,12 +232,11 @@
 
 .leftBanner,
 .rightBanner {
-  position: fixed; // <-- this is the key change
+  position: fixed; 
   top: 0;
   height: 100vh;
   width: 50px;
-//   background: #111;
-  z-index: 9999; // force them to be above almost everything
+  z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -247,8 +247,6 @@
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
-  pointer-events: none;
-  user-select: none;
 }
 
 .leftBanner {
@@ -258,6 +256,30 @@
 .rightBanner {
   right: 0;
   transform: rotate(180deg);
+}
+
+.bottomBanner {
+    bottom: 0;
+    background-color: #4C4CFF;
+    color: white;
+    position: fixed;
+    height: 50px;
+    width: 100dvw;
+    z-index: 9999; // force them to be above almost everything
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-orientation: mixed;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.leftBanner,
+.rightBanner,
+.bottomBanner {
+    cursor: pointer;
 }
 
 
