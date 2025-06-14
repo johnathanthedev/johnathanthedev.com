@@ -11,7 +11,9 @@ export default function Home() {
 
             <LoadingWithContent>
                 <div className={styles.page}>
-                    <h1>DREAMS.</h1>
+                    <FadeOnScroll>
+                        <h1>DREAMS.</h1>
+                    </FadeOnScroll>
                     <div className={styles["content-wrapper"]}>
                         <div className="content-section">
                             <div className={styles.gridGallery}>
