@@ -6,7 +6,6 @@ import animationData from "./loader.json";
 import styles from './LoadingWithContent.module.scss';
 import { LoadingWithContentProps } from './LoadingWithContent.types';
 
-
 export default function LoadingWithContent({ children }: LoadingWithContentProps) {
     const [isLoading, setIsLoading] = useState(true);
     const [animateFill, setAnimateFill] = useState(false);
@@ -14,9 +13,10 @@ export default function LoadingWithContent({ children }: LoadingWithContentProps
     const [showContent, setShowContent] = useState(false);
 
     useEffect(() => {
-        const onLoad = () => {
-            document.body.style.overflow = 'hidden';
+        // Disable scrolling on body only
+        document.body.style.overflow = 'hidden';
 
+        const onLoad = () => {
             setAnimateFill(true);
 
             const lettersCount = "DREAM. BUILD. REPEAT.".length;
@@ -29,6 +29,7 @@ export default function LoadingWithContent({ children }: LoadingWithContentProps
             }, totalFillDuration);
 
             setTimeout(() => {
+                // Re-enable scrolling on body only
                 document.body.style.overflow = '';
                 window.scrollTo(0, 0);
                 setIsLoading(false);
@@ -42,7 +43,12 @@ export default function LoadingWithContent({ children }: LoadingWithContentProps
             window.addEventListener('load', onLoad);
             return () => window.removeEventListener('load', onLoad);
         }
+
+        return () => {
+            document.body.style.overflow = '';
+        };
     }, []);
+
 
     return (
         <>
@@ -64,7 +70,7 @@ export default function LoadingWithContent({ children }: LoadingWithContentProps
 
             <main
                 className={`${styles.pageContent} ${showContent ? styles.slideIn : ''}`}
-                style={{ visibility: showContent ? 'visible' : 'hidden' }}
+                style={{ display: showContent ? 'block' : 'none' }}
             >
                 {children}
             </main>
